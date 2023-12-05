@@ -1,0 +1,16 @@
+.mouse-parallax {
+    height: 1000px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mouse-parallax__bg {
+    position: absolute;
+    background-image: url("../img/photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    transition: all 0.1s ease;
+}
