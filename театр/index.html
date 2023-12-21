@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+        }
+        .content{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background-image: url(bg.jpg);
+            background-size: cover;
+        }
+        .content__left{
+            background-image: url(imgLeft.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            height: 150%;
+            width: 50%;
+            left: -10%;
+            top: -10%;
+        }
+        .content__right{
+            background-image: url(imgRight.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            height: 150%;
+            width: 50%;
+            right: -10%;
+            top: -10%;
+        }
+        .content__lamp{
+            background-image: url(lamp.png);
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            /* transform: translate(-50%); */
+            width: 20%;
+            left: 40%;
+            top: -10%;
+        }
+        .text{
+            font-size: 100px;
+            text-shadow: 5px 5px 15px black;
+            color: #fcfcfc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="content__left"></div>
+        <div class="content__right"></div>
+        <div class="content__lamp"></div>
+        <h1 class="text">Веб-театр</h1>
+    </div>
+    
+    <script>
+        let left = document.querySelector('.content__left');
+        let right = document.querySelector('.content__right');
+        let lamp = document.querySelector('.content__lamp');
+        document.onmousemove = (e) => {
+
+            let x = e.clientX / window.innerWidth;
+            let y = e.clientY / window.innerHeight;
+
+            if (x <= window.innerWidth/2)
+            {
+                left.style.transform = `translate(-${x*150}px, -${y*150}px)`;
+                right.style.transform = `translate(-${x*150}px, -${y*150}px)`;
+                lamp.style.transform = `translate(-${x*50}px, -${y*50}px)`;
+            } else {
+                left.style.transform = `translate(${x*150}px, -${y*150}px)`;
+                right.style.transform = `translate(${x*150}px, -${y*150}px)`;
+                lamp.style.transform = `translate(${x*50}px, -${y*50}px)`;
+            }
+
+        }
+    </script>
+</body>
+</html>

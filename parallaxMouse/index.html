@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+        }
+        header{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .bg{
+            width: 110%;
+            height: 110%;
+            background-image: url(img.jpg);
+            background-size: cover;
+            position: relative;
+        }
+        .pirat{
+            width: 100%;
+            height: 100%;
+            background-image: url(pirat.png);
+            position: absolute;
+            bottom: -35%;
+            left: -20%;
+            background-repeat: no-repeat;
+        }
+        .text{
+            font-size: 100px;
+            font-weight: bold;
+            color: #fcfcfc;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%);
+            text-shadow: 5px 5px 15px #000000;
+            text-align: center;
+        }
+        .main{
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="bg">
+            <div class="pirat"></div>
+        </div>
+        <div class="text">Пиратское хранилище</div>
+    </header>
+
+    <main class="main">
+        <h1>Контент сайта</h1>
+    </main>
+    
+    <script>
+        let bg = document.querySelector('.bg');
+        let pirat = document.querySelector('.pirat');
+        document.onmousemove = (e) => {
+            let x = e.clientX / window.innerWidth;
+            let y = e.clientY / window.innerHeight;
+            bg.style.transform = `translate(-${x*50}px, -${y*50}px)`;
+            pirat.style.transform = `translate(-${x*100}px, -${y*100}px)`;
+        }
+    </script>
+</body>
+</html>

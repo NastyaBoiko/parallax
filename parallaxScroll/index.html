@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 200vh;
+        }
+        .parallax__image{
+            height: 100vh;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        .parallax__image:nth-child(1)
+        {
+            background-image: url(img1.jpg);
+        }
+        .parallax__image:nth-child(2)
+        {
+            background-image: url(img2.jpeg);
+        }
+        .parallax__image:nth-child(3)
+        {
+            background-image: url(img3.jpeg);
+        }
+        .header{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            color: #fcfcfc;
+            text-shadow: 5px 5px 15px black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="header">Мир животных</h1>
+
+    <div class="parallax">
+        <div class="parallax__image"></div>
+        <div class="parallax__image"></div>
+        <div class="parallax__image"></div>
+    </div>
+
+    <main class="main">
+        <h1>Контент сайта</h1>
+    </main>
+    
+    <script>
+
+    </script>
+</body>
+</html>
